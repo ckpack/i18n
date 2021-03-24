@@ -1,12 +1,12 @@
 {
   "name": "@ckpack/i18n",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The World's smallest fastest internationalization library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "yarn lint && rm -rf ./lib/* && tsc",
+    "build": "npm run lint && rm -rf ./lib/* && tsc",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "prepublish": "npm run build",
