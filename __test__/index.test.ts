@@ -8,7 +8,7 @@ describe('test i18n', () => {
       message: {
         confirm: '确认',
         cancel: '取消',
-        logout: '退出登录',
+        logout: '{name} 退出登录',
         update_password: '修改密码',
         upload: '上传',
         search: '搜索'
@@ -19,7 +19,8 @@ describe('test i18n', () => {
       message: {
         confirm: 'Confirm',
         cancel: 'Cancel',
-        logout: 'Sign Out',
+        logout: 'Sign Out {name}',
+        logout1: 'Sign Out {0}',
         update_password: 'Change password',
         upload: 'Upload'
       },
@@ -35,7 +36,8 @@ describe('test i18n', () => {
     });
     expect(i18n.t('message.confirm')).toBe('Confirm');
     expect(i18n.t('message.search')).toBe('搜索');
-    expect(i18n.t('message.confirm', { locale: 'zh' })).toBe('确认');
+    expect(i18n.t('message.logout', { name: 'chenkai' })).toBe('Sign Out chenkai');
+    expect(i18n.t('message.logout1', ['chenkai'])).toBe('Sign Out chenkai');
   });
   it('i18n.setLocale', () => {
     const i18n = new I18n({
@@ -53,6 +55,7 @@ describe('test i18n', () => {
       locale: 'zh',
       messages: messages
     });
+    expect(i18n.t('message.logout', { name: 'chenkai' })).toBe('chenkai 退出登录');
     expect(i18n.t('message.confirm')).toBe('确认');
     i18n.setLocale('en');
     expect(i18n.t('message.search')).toBe('搜索');

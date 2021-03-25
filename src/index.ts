@@ -1,5 +1,11 @@
 interface messages {
-  [index: string]: any;
+  [locale: string]: {
+    [message: string]: any;
+  };
+}
+interface params {
+  [template: string]: any;
+  [template: number]: any;
 }
 
 class I18n {
@@ -27,10 +33,11 @@ class I18n {
   /**
    * 获取当前语言翻译
    */
-  t (key: string, options: {locale?: string} = {}) {
-    const locale = options.locale || this.locale;
+  t (key: string, params?: params) {
+    const locale = this.locale;
     const keys = key.split('.');
-    return this.getMessagesByLocale(keys, locale) || this.getMessagesByLocale(keys, this.fallbackLocale);
+    const message = this.getMessagesByLocale(keys, locale) || this.getMessagesByLocale(keys, this.fallbackLocale);
+    return this.formatMessage(message, params);
   }
 
   private getMessagesByLocale (keys: string[], locale: string) {
@@ -40,6 +47,32 @@ class I18n {
       }
       return undefined;
     }, this.messages[locale]);
+  }
+
+  /**
+   * 格式化
+   * @param message - message
+   * @param params - 格式化message的参数
+   */
+  private formatMessage (message: any, params?: params) {
+    if (!message || typeof message !== 'string' || !params) return message;
+    const messageArr = message.split(/[{}]/);
+
+    let messageFormat = '';
+    for (let index = 0; index < messageArr.length; index += 1) {
+      const item = messageArr[index];
+      if (!item) continue;
+      if (index % 2 !== 0) {
+        if (item in params || Array.isArray(params)) {
+          messageFormat += params[item];
+        } else {
+          throw new Error(`${item} not in params`);
+        }
+      } else {
+        messageFormat += item;
+      }
+    }
+    return messageFormat;
   }
 
   /**
