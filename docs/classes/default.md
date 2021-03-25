@@ -47,7 +47,7 @@ Name | Type | Description |
 
 **Returns:** [*default*](default.md)
 
-Defined in: [index.ts:14](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L14)
+Defined in: [index.ts:14](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L14)
 
 ## Properties
 
@@ -55,7 +55,7 @@ Defined in: [index.ts:14](https://github.com/ckpack/i18n/blob/877a4f1/src/index.
 
 • **fallbackLocale**: *string*
 
-Defined in: [index.ts:13](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L13)
+Defined in: [index.ts:13](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L13)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **locale**: *string*
 
-Defined in: [index.ts:12](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L12)
+Defined in: [index.ts:12](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L12)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **messages**: messages
 
-Defined in: [index.ts:14](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L14)
+Defined in: [index.ts:14](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L14)
 
 ## Methods
 
@@ -90,7 +90,7 @@ Name | Type | Description |
 
 **Returns:** *any*
 
-Defined in: [index.ts:57](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L57)
+Defined in: [index.ts:57](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L57)
 
 ___
 
@@ -107,7 +107,7 @@ Name | Type |
 
 **Returns:** *object*
 
-Defined in: [index.ts:43](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L43)
+Defined in: [index.ts:43](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L43)
 
 ___
 
@@ -125,7 +125,7 @@ Name | Type | Description |
 
 **Returns:** *boolean*
 
-Defined in: [index.ts:82](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L82)
+Defined in: [index.ts:82](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L82)
 
 ___
 
@@ -144,4 +144,4 @@ Name | Type |
 
 **Returns:** *any*
 
-Defined in: [index.ts:36](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L36)
+Defined in: [index.ts:36](https://github.com/ckpack/i18n/blob/deeaa74/src/index.ts#L36)
