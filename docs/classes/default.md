@@ -46,7 +46,7 @@ Name | Type | Description |
 
 **Returns:** [*default*](default.md)
 
-Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/0ee014f/src/index.ts#L8)
+Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/71614d6/src/index.ts#L8)
 
 ## Properties
 
@@ -54,7 +54,7 @@ Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/0ee014f/src/index.t
 
 • **fallbackLocale**: *string*
 
-Defined in: [index.ts:7](https://github.com/ckpack/i18n/blob/0ee014f/src/index.ts#L7)
+Defined in: [index.ts:7](https://github.com/ckpack/i18n/blob/71614d6/src/index.ts#L7)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **locale**: *string*
 
-Defined in: [index.ts:6](https://github.com/ckpack/i18n/blob/0ee014f/src/index.ts#L6)
+Defined in: [index.ts:6](https://github.com/ckpack/i18n/blob/71614d6/src/index.ts#L6)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **messages**: messages
 
-Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/0ee014f/src/index.ts#L8)
+Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/71614d6/src/index.ts#L8)
 
 ## Methods
 
@@ -87,7 +87,7 @@ Name | Type |
 
 **Returns:** *any*
 
-Defined in: [index.ts:36](https://github.com/ckpack/i18n/blob/0ee014f/src/index.ts#L36)
+Defined in: [index.ts:36](https://github.com/ckpack/i18n/blob/71614d6/src/index.ts#L36)
 
 ___
 
@@ -105,7 +105,7 @@ Name | Type | Description |
 
 **Returns:** *boolean*
 
-Defined in: [index.ts:49](https://github.com/ckpack/i18n/blob/0ee014f/src/index.ts#L49)
+Defined in: [index.ts:49](https://github.com/ckpack/i18n/blob/71614d6/src/index.ts#L49)
 
 ___
 
@@ -125,4 +125,4 @@ Name | Type |
 
 **Returns:** *any*
 
-Defined in: [index.ts:30](https://github.com/ckpack/i18n/blob/0ee014f/src/index.ts#L30)
+Defined in: [index.ts:30](https://github.com/ckpack/i18n/blob/71614d6/src/index.ts#L30)
