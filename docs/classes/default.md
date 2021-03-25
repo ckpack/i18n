@@ -16,6 +16,7 @@
 
 ### Methods
 
+- [formatMessage](default.md#formatmessage)
 - [getMessagesByLocale](default.md#getmessagesbylocale)
 - [setLocale](default.md#setlocale)
 - [t](default.md#t)
@@ -46,7 +47,7 @@ Name | Type | Description |
 
 **Returns:** [*default*](default.md)
 
-Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/8461476/src/index.ts#L8)
+Defined in: [index.ts:14](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L14)
 
 ## Properties
 
@@ -54,7 +55,7 @@ Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/8461476/src/index.t
 
 • **fallbackLocale**: *string*
 
-Defined in: [index.ts:7](https://github.com/ckpack/i18n/blob/8461476/src/index.ts#L7)
+Defined in: [index.ts:13](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L13)
 
 ___
 
@@ -62,7 +63,7 @@ ___
 
 • **locale**: *string*
 
-Defined in: [index.ts:6](https://github.com/ckpack/i18n/blob/8461476/src/index.ts#L6)
+Defined in: [index.ts:12](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L12)
 
 ___
 
@@ -70,13 +71,32 @@ ___
 
 • **messages**: messages
 
-Defined in: [index.ts:8](https://github.com/ckpack/i18n/blob/8461476/src/index.ts#L8)
+Defined in: [index.ts:14](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L14)
 
 ## Methods
 
+### formatMessage
+
+▸ `Private`**formatMessage**(`message`: *any*, `params?`: params): *any*
+
+格式化
+
+#### Parameters:
+
+Name | Type | Description |
+:------ | :------ | :------ |
+`message` | *any* | message   |
+`params?` | params | 格式化message的参数    |
+
+**Returns:** *any*
+
+Defined in: [index.ts:57](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L57)
+
+___
+
 ### getMessagesByLocale
 
-▸ `Private`**getMessagesByLocale**(`keys`: *string*[], `locale`: *string*): *any*
+▸ `Private`**getMessagesByLocale**(`keys`: *string*[], `locale`: *string*): *object*
 
 #### Parameters:
 
@@ -85,9 +105,9 @@ Name | Type |
 `keys` | *string*[] |
 `locale` | *string* |
 
-**Returns:** *any*
+**Returns:** *object*
 
-Defined in: [index.ts:36](https://github.com/ckpack/i18n/blob/8461476/src/index.ts#L36)
+Defined in: [index.ts:43](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L43)
 
 ___
 
@@ -105,13 +125,13 @@ Name | Type | Description |
 
 **Returns:** *boolean*
 
-Defined in: [index.ts:49](https://github.com/ckpack/i18n/blob/8461476/src/index.ts#L49)
+Defined in: [index.ts:82](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L82)
 
 ___
 
 ### t
 
-▸ **t**(`key`: *string*, `options?`: { `locale?`: *string*  }): *any*
+▸ **t**(`key`: *string*, `params?`: params): *any*
 
 获取当前语言翻译
 
@@ -120,9 +140,8 @@ ___
 Name | Type |
 :------ | :------ |
 `key` | *string* |
-`options` | *object* |
-`options.locale?` | *string* |
+`params?` | params |
 
 **Returns:** *any*
 
-Defined in: [index.ts:30](https://github.com/ckpack/i18n/blob/8461476/src/index.ts#L30)
+Defined in: [index.ts:36](https://github.com/ckpack/i18n/blob/877a4f1/src/index.ts#L36)
