@@ -4,4 +4,4 @@
 
 The smallest fastest internationalization library
 
-# [Documentation](docs/)
+# [Documentation](/docs/)
