@@ -1,6 +1,6 @@
 {
   "name": "@ckpack/i18n",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "The World's smallest fastest internationalization library",
   "repository": "https://github.com/ckpack/i18n",
   "main": "dist/index.js",
