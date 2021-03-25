@@ -3,7 +3,7 @@ import typescript from 'rollup-plugin-typescript2';
 
 const name = 'I18n';
 export default {
-  input: './lib/index.js',
+  input: './src/index.ts',
   output: [{
     file: 'dist/index.js',
     format: 'umd',
