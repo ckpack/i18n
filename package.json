@@ -11,16 +11,14 @@
     "tsc": "rm -rf ./lib/* && tsc",
     "rollup": "rm -rf ./dist/* && rollup --config",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "docs": "rm -rf ./docs/* && typedoc --plugin typedoc-plugin-markdown  ./src/index.ts",
-    "prepublish": "npm run test"
+    "docs": "rm -rf ./docs/* && typedoc ./src/index.ts"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && npm test",
+      "pre-commit": "npm test",
       "pre-push": "npm test"
     }
   },
-  "prepublish": "npm run build",
   "keywords": [
     "i18n",
     "internationalization"
@@ -47,7 +45,6 @@
     "ts-jest": "^26.5.4",
     "tslib": "^2.1.0",
     "typedoc": "^0.20.34",
-    "typedoc-plugin-markdown": "^3.6.0",
     "typescript": "^4.2.3"
   }
 }
