@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import I18n from '../src';
 
+console.log(I18n);
 describe('test i18n', () => {
   const messages = {
     zh: {
@@ -55,5 +56,7 @@ describe('test i18n', () => {
     expect(i18n.t('message.confirm')).toBe('确认');
     i18n.setLocale('en');
     expect(i18n.t('message.search')).toBe('搜索');
+    expect(i18n.setLocale('en')).toBe(true);
+    expect(i18n.setLocale('en-')).toBe(false);
   });
 });

@@ -6,6 +6,17 @@ class I18n {
   locale: string;
   fallbackLocale: string;
   messages: messages;
+  /**
+   * 获取I18构造函数
+   * ```js
+   * const i18n = new I18n({
+   *   locale: 'en',
+   *   fallbackLocale: 'zh',
+   *   messages: {...}
+   * });
+   * ```
+   * @param params - I18n构造参数
+   */
   constructor (params: {locale: string, fallbackLocale?: string, messages: messages}) {
     const { locale, fallbackLocale, messages } = params;
     this.locale = locale;
@@ -13,6 +24,9 @@ class I18n {
     this.messages = messages;
   }
 
+  /**
+   * 获取当前语言翻译
+   */
   t (key: string, options: {locale?: string} = {}) {
     const locale = options.locale || this.locale;
     const keys = key.split('.');
@@ -28,8 +42,16 @@ class I18n {
     }, this.messages[locale]);
   }
 
+  /**
+   * 设置当前语言环境
+   * @param locale - 当前语言
+   */
   setLocale (locale: string) {
-    this.locale = locale;
+    if (Object.keys(this.messages).indexOf(locale) !== -1) {
+      this.locale = locale;
+      return true;
+    }
+    return false;
   }
 }
 
