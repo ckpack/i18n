@@ -1,17 +1,10 @@
-interface messages {
-  [locale: string]: {
-    [message: string]: any;
-  };
-}
-interface params {
-  [template: string]: any;
-  [template: number]: any;
-}
+import type { Messages, Params } from './types';
+import { formatMessage } from './utils';
 
 class I18n {
   locale: string;
   fallbackLocale: string;
-  messages: messages;
+  messages: Messages;
   /**
    * I18n构造函数
    *
@@ -27,7 +20,7 @@ class I18n {
    * ```
    * @param params - I18n构造参数
    */
-  constructor (params: {locale: string, fallbackLocale?: string, messages: messages}) {
+  constructor (params: {locale: string, fallbackLocale?: string, messages: Messages}) {
     const { locale, fallbackLocale, messages } = params;
     this.locale = locale;
     this.fallbackLocale = fallbackLocale || locale;
@@ -43,11 +36,11 @@ class I18n {
    * @param params - 用于格式化语言对应的内容;如`message.hello`对应值为`{msg} world`, 那么`t('message.hello', { msg: 'hello' }) } ` 输出 `hello world`
    * @returns - 语言对应的内容
    */
-  t (key: string, params?: params) {
+  t (key: string, params?: Params) {
     const locale = this.locale;
     const keys = key.split('.');
     const message = this.getMessagesByLocale(keys, locale) || this.getMessagesByLocale(keys, this.fallbackLocale);
-    return this.formatMessage(message, params);
+    return formatMessage(message, params);
   }
 
   /**
@@ -63,33 +56,6 @@ class I18n {
       }
       return undefined;
     }, this.messages[locale]);
-  }
-
-  /**
-   * 格式化
-   * @param message - 格式化前语言对应的内容
-   * @param params - 格式化message的参数
-   * @returns - 格式化后语言对应的内容
-   */
-  private formatMessage (message: any, params?: params) {
-    if (!message || typeof message !== 'string' || !params) return message;
-    const messageArr = message.split(/[{}]/);
-
-    let messageFormat = '';
-    for (let index = 0; index < messageArr.length; index += 1) {
-      const item = messageArr[index];
-      if (!item) continue;
-      if (index % 2 !== 0) {
-        if (item in params || Array.isArray(params)) {
-          messageFormat += params[item];
-        } else {
-          throw new Error(`${item} not in params`);
-        }
-      } else {
-        messageFormat += item;
-      }
-    }
-    return messageFormat;
   }
 
   /**

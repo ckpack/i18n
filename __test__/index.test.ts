@@ -56,6 +56,11 @@ describe('test i18n', () => {
       messages: messages
     });
     expect(i18n.t('message.logout', { name: 'chenkai' })).toBe('chenkai 退出登录');
+    try {
+      i18n.t('message.logout', { test: 'chenkai' });
+    } catch (error) {
+      expect(error.message).toBe('name not in params');
+    }
     expect(i18n.t('message.confirm')).toBe('确认');
     i18n.setLocale('en');
     expect(i18n.t('message.search')).toBe('搜索');
