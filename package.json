@@ -1,6 +1,6 @@
 {
   "name": "@ckpack/i18n",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "The World's smallest fastest internationalization library",
   "repository": "https://github.com/ckpack/i18n",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "tsc": "rm -rf ./lib/* && tsc",
     "rollup": "rm -rf ./dist/* && rollup --config",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "docs": "rm -rf ./docs/* && typedoc --theme minimal ./src/index.ts"
+    "docs": "rm -rf ./docs/* && typedoc --readme none --theme minimal ./src/index.ts"
   },
   "husky": {
     "hooks": {
