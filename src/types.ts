@@ -1,7 +1,9 @@
+export interface Message {
+  [message: string]: any;
+}
+
 export interface Messages {
-  [locale: string]: {
-    [message: string]: any;
-  };
+  [locale: string]: Message;
 }
 
 export interface Params {

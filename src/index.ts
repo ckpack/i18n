@@ -1,4 +1,4 @@
-import type { Messages, Params } from './types';
+import type { Messages, Message, Params } from './types';
 import { formatMessage } from './utils';
 
 class I18n {
@@ -24,7 +24,7 @@ class I18n {
     const { locale, fallbackLocale, messages } = params;
     this.locale = locale;
     this.fallbackLocale = fallbackLocale || locale;
-    this.messages = messages;
+    this.messages = messages || {};
   }
 
   /**
@@ -69,6 +69,15 @@ class I18n {
       return true;
     }
     return false;
+  }
+
+  /**
+   * 动态设置语言数据
+   * @param locale 语言类型
+   * @param messages 语言环境内容
+   */
+  setLocaleMessage (locale: string, message: Message) {
+    this.messages[locale] = message;
   }
 }
 

@@ -67,4 +67,14 @@ describe('test i18n', () => {
     expect(i18n.setLocale('en')).toBe(true);
     expect(i18n.setLocale('en-')).toBe(false);
   });
+
+  it('i18n.setLocaleMessage', () => {
+    const i18n = new I18n({
+      locale: 'zh',
+      messages: {}
+    });
+
+    i18n.setLocaleMessage('zh', messages.zh);
+    expect(i18n.t('message.confirm')).toBe('确认');
+  });
 });
