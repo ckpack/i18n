@@ -1,8 +1,6 @@
-# @ckpack/i18n
+# i18n
 
-The smallest fastest internationalization library
-
-# Example
+A lightweight internationalization library
 
 ```js
 const i18n = new I18n({
@@ -11,23 +9,26 @@ const i18n = new I18n({
   messages: {
     zh: {
       hello: "你好 世界",
-      say: {
-        thanks: "{name} 谢谢"
+      nest: {
+        author: "作者: {name}"
       }
     },
     en: {
       hello: "hello world",
-      say: {
-        thanks: "thanks {name}"
+      nest: {
+        author: "author: {name}"
       }
     }
   }
 });
 
+// defaultLocale = "zh";
 i18n.t('hello') // 你好 世界
-i18n.t('say.thanks', {name: 'xiaohong'}) // xiaohong 谢谢
+i18n.t('nest.author', {name: 'xiaohong'}) // 作者: xiaohong
+
+// defaultLocale = "en";
+i18n.t('hello') // hello world
+i18n.t('nest.author', {name: 'xiaohong'}) // author: xiaohong
 ```
 
-# [Demo](https://codesandbox.io/s/recursing-tu-l5nc3?file=/index.html)
-
-# [Documentation](https://ckpack.github.io/i18n/)
+## [Demo](https://ckpack.github.io/i18n/)

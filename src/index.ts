@@ -1,10 +1,17 @@
-import type { Messages, Message, Params } from './types';
+// import type { Messages, Message, Params } from './types';
+import type { Params } from './utils';
 import { formatMessage } from './utils';
+
+export type Message = Record<string, any>; 
+export type Messages = Record<string, Message>; 
 
 class I18n {
   locale: string;
+
   fallbackLocale: string;
+
   messages: Messages;
+
   /**
    * I18n构造函数
    *
@@ -20,7 +27,7 @@ class I18n {
    * ```
    * @param params - I18n构造参数
    */
-  constructor (params: {locale: string, fallbackLocale?: string, messages: Messages}) {
+  constructor(params: { locale: string, fallbackLocale?: string, messages: Messages }) {
     const { locale, fallbackLocale, messages } = params;
     this.locale = locale;
     this.fallbackLocale = fallbackLocale || locale;
@@ -36,7 +43,7 @@ class I18n {
    * @param params - 用于格式化语言对应的内容;如`message.hello`对应值为`{msg} world`, 那么`t('message.hello', { msg: 'hello' }) } ` 输出 `hello world`
    * @returns - 语言对应的内容
    */
-  t (key: string, params?: Params) {
+  t(key: string, params?: Params) {
     const locale = this.locale;
     const keys = key.split('.');
     const message = this.getMessagesByLocale(keys, locale) || this.getMessagesByLocale(keys, this.fallbackLocale);
@@ -49,7 +56,7 @@ class I18n {
    * @param locale - 当前语言
    * @returns - 语言对应的内容
    */
-  private getMessagesByLocale (keys: string[], locale: string) {
+  private getMessagesByLocale(keys: string[], locale: string) {
     return keys.reduce((val, cur) => {
       if (val && cur in val) {
         return val[cur];
@@ -63,7 +70,7 @@ class I18n {
    * @param locale - 当前语言
    * @returns - 返回是否设置成功
    */
-  setLocale (locale: string) {
+  setLocale(locale: string) {
     if (Object.keys(this.messages).indexOf(locale) !== -1) {
       this.locale = locale;
       return true;
@@ -76,7 +83,7 @@ class I18n {
    * @param locale 语言类型
    * @param messages 语言环境内容
    */
-  setLocaleMessage (locale: string, message: Message) {
+  setLocaleMessage(locale: string, message: Message) {
     this.messages[locale] = message;
   }
 }

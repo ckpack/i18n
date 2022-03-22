@@ -1,12 +1,18 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "module": "es6",
-      "declaration": true,
-      "outDir": "./lib",
-      "strict": true,
-      "moduleResolution": "node"
-    },
-    "include": ["src"],
-    "exclude": ["node_modules", "lib"]
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "moduleResolution": "Node",
+    "strict": false,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "./"
+  },
+  "include": ["src", "vite.config.js", "__test__"]
 }

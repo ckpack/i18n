@@ -1,4 +1,7 @@
-import type { Params } from '../types';
+export interface Params {
+  [template: string]: any;
+  [template: number]: any;
+}
 
 /**
  * 格式化
@@ -6,7 +9,7 @@ import type { Params } from '../types';
  * @param params - 格式化message的参数
  * @returns - 格式化后语言对应的内容
  */
-function formatMessage (message: any, params?: Params) {
+function formatMessage(message: string, params?: Params) {
   if (!message || typeof message !== 'string' || !params) return message;
   const messageArr = message.split(/[{}]/);
 
@@ -28,5 +31,5 @@ function formatMessage (message: any, params?: Params) {
 }
 
 export {
-  formatMessage
+  formatMessage,
 };

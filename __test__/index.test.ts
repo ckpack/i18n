@@ -1,7 +1,6 @@
-/* eslint-env jest */
+import { describe, expect, it } from 'vitest';
 import I18n from '../src';
 
-console.log(I18n);
 describe('test i18n', () => {
   const messages = {
     zh: {
@@ -11,9 +10,9 @@ describe('test i18n', () => {
         logout: '{name} 退出登录',
         update_password: '修改密码',
         upload: '上传',
-        search: '搜索'
+        search: '搜索',
       },
-      tt: 3
+      tt: 3,
     },
     en: {
       message: {
@@ -22,17 +21,17 @@ describe('test i18n', () => {
         logout: 'Sign Out {name}',
         logout1: 'Sign Out {0}',
         update_password: 'Change password',
-        upload: 'Upload'
+        upload: 'Upload',
       },
-      tt: 'three'
-    }
+      tt: 'three',
+    },
   };
 
   it('i18n.t', () => {
     const i18n = new I18n({
       locale: 'en',
       fallbackLocale: 'zh',
-      messages: messages
+      messages: messages,
     });
     expect(i18n.t('message.confirm')).toBe('Confirm');
     expect(i18n.t('message.search')).toBe('搜索');
@@ -43,7 +42,7 @@ describe('test i18n', () => {
     const i18n = new I18n({
       locale: 'en',
       fallbackLocale: 'zh',
-      messages: messages
+      messages: messages,
     });
     expect(i18n.t('message.confirm')).toBe('Confirm');
     i18n.setLocale('zh');
@@ -53,7 +52,7 @@ describe('test i18n', () => {
   it('i18n.t', () => {
     const i18n = new I18n({
       locale: 'zh',
-      messages: messages
+      messages: messages,
     });
     expect(i18n.t('message.logout', { name: 'chenkai' })).toBe('chenkai 退出登录');
     try {
@@ -71,10 +70,13 @@ describe('test i18n', () => {
   it('i18n.setLocaleMessage', () => {
     const i18n = new I18n({
       locale: 'zh',
-      messages: {}
+      messages: {},
     });
 
     i18n.setLocaleMessage('zh', messages.zh);
     expect(i18n.t('message.confirm')).toBe('确认');
   });
 });
+
+
+
