@@ -3,14 +3,22 @@ export interface Params {
   [template: number]: any;
 }
 
+type Fun = (...args: any[]) => string
+
 /**
  * 格式化
  * @param message - 格式化前语言对应的内容
  * @param params - 格式化message的参数
  * @returns - 格式化后语言对应的内容
  */
-function formatMessage(message: string, params?: Params) {
+function formatMessage(message: string | Fun, params?: Params) {
+
+  if(typeof message === 'function') {
+    return message(params);
+  }
+
   if (!message || typeof message !== 'string' || !params) return message;
+
   const messageArr = message.split(/[{}]/);
 
   let messageFormat = '';
@@ -21,7 +29,8 @@ function formatMessage(message: string, params?: Params) {
       if (item in params || Array.isArray(params)) {
         messageFormat += params[item];
       } else {
-        throw new Error(`${item} not in params`);
+        messageFormat += `{${item}}`;
+        console.error(new Error(`${item} not in params`))
       }
     } else {
       messageFormat += item;

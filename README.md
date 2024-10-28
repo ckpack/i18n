@@ -11,13 +11,15 @@ const i18n = new I18n({
       hello: "你好 世界",
       nest: {
         author: "作者: {name}"
-      }
+      },
+      amount: (v: string | number) => `${v}元`
     },
     en: {
       hello: "hello world",
       nest: {
         author: "author: {name}"
-      }
+      },
+      amount: (v: string | number) => `${v}$`
     }
   }
 });

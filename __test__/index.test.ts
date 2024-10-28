@@ -11,6 +11,7 @@ describe('test i18n', () => {
         update_password: '修改密码',
         upload: '上传',
         search: '搜索',
+        amount: (v: string | number) => `${v}元`
       },
       tt: 3,
     },
@@ -22,6 +23,7 @@ describe('test i18n', () => {
         logout1: 'Sign Out {0}',
         update_password: 'Change password',
         upload: 'Upload',
+        amount: (v: string | number) => `${v}$`
       },
       tt: 'three',
     },
@@ -35,8 +37,10 @@ describe('test i18n', () => {
     });
     expect(i18n.t('message.confirm')).toBe('Confirm');
     expect(i18n.t('message.search')).toBe('搜索');
-    expect(i18n.t('message.logout', { name: 'chenkai' })).toBe('Sign Out chenkai');
-    expect(i18n.t('message.logout1', ['chenkai'])).toBe('Sign Out chenkai');
+    expect(i18n.t('message.logout', { name: 'username' })).toBe('Sign Out username');
+    expect(i18n.t('message.logout')).toBe('Sign Out {name}');
+    expect(i18n.t('message.logout1', ['username'])).toBe('Sign Out username');
+    expect(i18n.t('message.amount', [6])).toBe('6$');
   });
   it('i18n.setLocale', () => {
     const i18n = new I18n({
